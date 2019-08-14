@@ -6,11 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>404</title>
     <style>
-        .error-cont {
+        html {
             background-color: crimson;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-align: center;
+        }
+        .error-cont {
             color: #ffffff;
             width: 480px;
-            border-radius: 8px;
             padding: 8px;
             margin: auto;
             position: relative;
@@ -20,12 +23,10 @@
         msg,
         error {
             display: block;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            text-align: center;
         }
 
         msg {
-            font-size: 48px;
+            font-size: 72px;
         }
 
         error {
@@ -35,17 +36,26 @@
             width: 100%;
             height: 1px;
             background-color: #ffffff;
-            opacity: calc(2/3);
+            opacity: 0.5;
             margin: 6px auto 6px auto;
+        }
+        a {
+            text-decoration-color: #ffffff;
+            color: #ffffff
+        }
+        a:visited {
+            text-decoration-color: #ffffff;
+            color: #ffffff
         }
     </style>
 </head>
 
 <body>
     <div class="error-cont">
-        <msg>Error</msg>
+        <msg>404</msg>
         <div class="break"></div>
-        <error>Page not found</error>
+        <error>Page not found!</error>
+        <p>You may have typed the url incorrectly or this page does not exist. You may want to check <a href="https://www.githubstatus.com/" target="_blank">GitHub Status</a></p>
     </div>
 </body>
 
