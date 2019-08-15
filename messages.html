@@ -62,16 +62,16 @@
 
         user {
             display: block;
-            font-size: 18
+            font-size: 18;
+            position: relative;
+            bottom: 52px;
+            left: 60px;
+            z-index: 11;
         }
 
-        lastseen {
+        div#lastseen {
             font-size: 14;
             color: gray;
-        }
-
-        user,
-        lastseen {
             position: relative;
             bottom: 52px;
             left: 60px;
@@ -92,9 +92,30 @@
     <div class="emulator">
         <div class="header">
             <div class="userinfo">
+                <script>
+                    var today = new Date();
+                    var hours = today.getHours();
+                    if (hours > 0) {
+                        var time = "9:34 PM"
+                    }
+                    if (hours > 6) {
+                        var time = "5:46 AM"
+                    }
+                    if (hours > 12) {
+                        var time = "11:57 AM"
+                    }
+                    if (hours > 18) {
+                        var time = "17:52 PM"
+                    }
+                    if (hours > 23) {
+                        var time = "11:28 PM"
+                    }
+                    var timeTag = "Last seen " + time
+                    document.getElementsByClassName("lastseen").innerHTML = "Hello World";
+                </script>
                 <img src="profile.jpg" alt="Mr Bean" class="pp">
                 <user>Mr Bean</user>
-                <lastseen>Last seen 6:02 PM</lastseen>
+                <div id="lastseen" class="ls">Last seen 6:02 PM</div>
             </div>
         </div>
         <div class="dialogue">
@@ -111,15 +132,6 @@
             <p rom>Please think of a better answer than that, that answer won't be any help and may offend her family.
             </p>
             <p bean>Perhaps you should.....</p>
-            <p bean><img
-                    src="https://www.sciencemag.org/sites/default/files/styles/inline__450w__no_aspect/public/hippo_16x9.jpg"
-                    alt=""></p>
-            <p bean>Hippopoot</p>
-            <p rom><img
-                    src="https://66.media.tumblr.com/af814842429c9f109f50bee4e451b069/tumblr_omd7h45Ums1w73ry4o1_400.jpg"
-                    alt=""></p>
-            <p rom>Origami</p>
-            <p rom>a</p>
         </div>
     </div>
 
