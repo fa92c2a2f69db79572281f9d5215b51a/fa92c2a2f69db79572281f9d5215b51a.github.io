@@ -5,26 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Main Page</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <style>
         ul.indexBar {
+            position: fixed;
+            top: -16px;
+            left: -8px;
             list-style: none;
+            background-color: crimson;
+            width: 100vw;
+            height: 58px;;
         }
 
         ul.indexBar>li {
             display: inline;
             margin-right: 12px;
+            position: relative;
+            top: 16px;
         }
         
+        .indexBarItem > a {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.25rem;
+        }
+        .indexBarItem > a.active {
+            color: white;
+            text-decoration-color: rgba(255, 255, 255, 0.5);
+        }
+        .indexBarItem > a.inactive {
+            text-decoration: none;
+            color: white;
+        }
+        .indexBarItem > a:visited {
+            color: white;
+        }
     </style>
 </head>
 
 <body>
     <ul class=indexBar>
-        <li><a href="original.gp" target="_blank" class="indexBarItem">Home</a></li>
-        <li><a href="original.gp" target="_blank" class="indexBarItem">Software</a></li>
-        <li><a href="original.gp" target="_blank" class="indexBarItem">Tools</a></li>
-        <li><a href="original.gp" target="_blank" class="indexBarItem">About</a></li>
+        <li class="indexBarItem"><a href="?i=home" class="active">Home</a></li>
+        <li class="indexBarItem"><a href="?i=software" class="inactive">Software</a></li>
+        <li class="indexBarItem"><a href="?i=tools" class="inactive">Tools</a></li>
+        <li class="indexBarItem"><a href="?i=about" class="inactive">About</a></li>
     </ul>
 </body>
 
-</html>
+</html> 
