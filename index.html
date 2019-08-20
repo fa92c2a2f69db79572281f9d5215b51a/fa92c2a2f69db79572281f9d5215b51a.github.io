@@ -1,54 +1,57 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Main Page</title>
-    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
-    <style>
-        ul.indexBar {
-            position: fixed;
-            top: -16px;
-            left: -8px;
-            list-style: none;
-            background-color: crimson;
-            width: 100vw;
-            height: 58px;;
-        }
-
-        ul.indexBar>li {
-            display: inline;
-            margin-right: 12px;
-            position: relative;
-            top: 16px;
-        }
-        
-        .indexBarItem > a {
-            font-family: 'Nunito', sans-serif;
-            font-size: 1.25rem;
-        }
-        .indexBarItem > a.active {
-            color: white;
-            text-decoration-color: rgba(255, 255, 255, 0.5);
-        }
-        .indexBarItem > a.inactive {
-            text-decoration: none;
-            color: white;
-        }
-        .indexBarItem > a:visited {
-            color: white;
-        }
-    </style>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
 </head>
 
 <body>
-    <ul class=indexBar>
-        <li class="indexBarItem"><a href="?i=home" class="active">Home</a></li>
-        <li class="indexBarItem"><a href="?i=software" class="inactive">Software</a></li>
-        <li class="indexBarItem"><a href="?i=tools" class="inactive">Tools</a></li>
-        <li class="indexBarItem"><a href="?i=about" class="inactive">About</a></li>
-    </ul>
+    <nav class="uk-navbar-container" uk-navbar>
+
+        <div class="uk-navbar-left">
+
+            <ul class="uk-navbar-nav">
+                <li class="uk-active"><a href="#">Active</a></li>
+                <li>
+                    <a href="#">Parent</a>
+                    <div class="uk-navbar-dropdown">
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li class="uk-active"><a href="#">Active</a></li>
+                            <li><a href="#">Item</a></li>
+                            <li><a href="#">Item</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">Item</a></li>
+            </ul>
+
+        </div>
+
+        <div class="uk-navbar-right">
+
+            <ul class="uk-navbar-nav">
+                <li class="uk-active"><a href="#">Active</a></li>
+                <li>
+                    <a href="#">Parent</a>
+                    <div class="uk-navbar-dropdown">
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li class="uk-active"><a href="#">Active</a></li>
+                            <li><a href="#">Item</a></li>
+                            <li><a href="#">Item</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">Item</a></li>
+            </ul>
+
+        </div>
+
+    </nav>
 </body>
 
-</html> 
+</html>

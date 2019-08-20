@@ -1,11 +1,4 @@
-var url_string = window.location.href;
-var url = new URL(url_string);
-var origin = url.searchParams.get("url")
-var encodedIn = atob(orgin);
-var encodedFilter1 = encodedIn.replace(/=/g, "_")
-var encodedFilter2 = encodedFilter1.replace(/-/g, "+")
-var encodedFilter3 = encodedFilter2.replace()
-var file = decodedOut;
+var file = "https://rawcdn.githack.com/fa92c2a2f69db79572281f9d5215b51a/cdn/8a0cfae4a0d9a72163b36a6cbab868f130e752b9/stream.mp4";
 fileType = file.slice(file.lastIndexOf(".") + 1);
 //CHECK IF FILE EXTENSION MATCHES SUPPORTED EXTENSIONS
 
@@ -81,5 +74,4 @@ var stylesheet = location.pathname.split("/").pop();
 var meta = document.createElement("meta");
 meta.setAttribute("name", "viewport");
 meta.setAttribute("content", "width=device-width");
-document.getElementsByTagName("head").appendChild(meta);
 //<meta name="viewport" content="width=device-width">
