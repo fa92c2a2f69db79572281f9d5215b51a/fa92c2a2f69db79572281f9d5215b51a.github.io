@@ -1,0 +1,86 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Warping...</title>
+    <style>
+        div.box {
+            box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
+            width: 75vw;
+            max-width: 480px;
+            margin: auto;
+            padding: 24px 0px 24px 0px;
+            position: relative;
+            top: 30vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        h1 {
+            font-weight: 500;
+            margin: auto;
+            display: block;
+            text-align: center;
+            font-size: 2rem;
+            color: crimson;
+            text-decoration: underline;
+            text-decoration-color: crimson;
+        }
+
+        h2 {
+            font-weight: 600;
+            font-size: 1rem;
+            color: rgb(142, 142, 142);
+            text-align: center;
+        }
+
+        img {
+            width: 4rem;
+            animation: loader .9s infinite linear;
+            display: block;
+            margin: 36px auto 36px auto;
+        }
+
+        @keyframes loader {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body onload="warp()">
+    <script>
+        String.prototype.replaceAll = function (str1, str2, ignore) {
+            return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g, "\\$&"), (ignore ? "gi" : "g")), (typeof (str2) == "string") ? str2.replace(/\$/g, "$$$$") : str2);
+        }
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        };
+        function warp() {
+            var warpTo = atob(getUrlParameter("d").replaceAll("_", "=").replaceAll("-", "+").replaceAll("!", "/"))
+            document.getElementById("navigator").setAttribute("href", warpTo);
+            document.getElementById("navigator").click();
+        }
+
+
+
+        // warpTo.replaceAll("=", "_").replaceAll("+", "-").replaceAll("/", "!")
+    </script>
+    <a href="" id="navigator"></a>
+    <div class="box">
+        <h1>Loading</h1>
+        <img src="loader.png" alt="">
+        <h2>Please be patient while the page loads...</h2>
+    </div>
+</body>
+
+</html>
