@@ -6,17 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Warping...</title>
     <style>
-		body {
-    		text-align: center;
-    		line-height: 100vh;
-			vertical-align: middle;
+		div.centerBox {
+    		position:relative;
+  			width: 100%;
+  			height: 100%;
+  			margin: auto;
 		}
         
         img {
             width: 4rem;
             animation: loader .9s infinite linear;
-            display: block;
-            vertical-align: middle;
+			position:absolute;
+  			top: 0; bottom: 0; left: 0; right: 0;
+  			margin: auto;
         }
 
         @keyframes loader {
@@ -53,7 +55,9 @@
         // warpTo.replaceAll("=", "_").replaceAll("+", "-").replaceAll("/", "!")
     </script>
     <a href="" id="navigator"></a>
-    <img src="https://i.imgur.com/k2r6LKG.png" alt="">
+	<div class="centerBox">
+    	<img src="https://i.imgur.com/k2r6LKG.png" alt="">
+	</div>
 </body>
 
 </html>
