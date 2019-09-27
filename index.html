@@ -6,22 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Warping...</title>
     <style>
-        div.box {
-            /*box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);*/
-            width: 75vw;
-            max-width: 480px;
-            margin: auto;
-            padding: 24px 0px 24px 0px;
-            position: relative;
-            top: 30vh;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        div.loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
         img {
             width: 4rem;
             animation: loader .9s infinite linear;
             display: block;
-            margin: 36px auto 36px auto;
         }
 
         @keyframes loader {
@@ -58,7 +52,7 @@
         // warpTo.replaceAll("=", "_").replaceAll("+", "-").replaceAll("/", "!")
     </script>
     <a href="" id="navigator"></a>
-    <div class="box">
+    <div class="loader">
         <img src="https://i.imgur.com/k2r6LKG.png" alt="">
     </div>
 </body>
