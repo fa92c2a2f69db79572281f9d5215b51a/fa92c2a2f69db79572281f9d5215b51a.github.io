@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Loadr</title>
+    <script>
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        };
+
+        function loadXMLDoc() {
+            document.getElementById("fileName").innerHTML = getUrlParameter("q") + ".web";
+            console.info("Requesting data from server...");
+            var t0 = performance.now();
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.info("Data obtained");
+                    console.info("Decoding .web file");
+                    document.write(atob(this.responseText));
+                    document.title = "Loadr - " + getUrlParameter("q");
+                    var t1 = performance.now();
+                    console.info("Completed operations in " + (Math.floor(t1) - Math.floor(t0)) / 1000 + " seconds");
+                }
+            };
+            xhttp.open("GET", String(getUrlParameter("q")) + ".web", true);
+            xhttp.send();
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f7f7f7;
+        }
+
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.69rem;
+            font-weight: normal;
+            position: relative;
+            top: 10px;
+        }
+
+        div.loadContainer {
+            display: block;
+            width: 200px;
+            height: 200px;
+            box-shadow: 0 0 36px rgba(0, 0, 0, 0.2);
+            padding: 0px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            position: absolute;
+            top: calc(50vh - 100px);
+            left: calc(50vw - 100px);
+        }
+
+        div.loadContainerHeader {
+            position: relative;
+            top: -18px;
+            width: 100%;
+            height: 52px;
+            background-color: #ffee00;
+            border-radius: 8px 8px 0px 0px;
+        }
+
+        p {
+            position: relative;
+            bottom: 16px;
+        }
+        /*LOADER*/
+
+        .lds-ellipsis {
+            display: inline-block;
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin: auto;
+        }
+
+        .lds-ellipsis div.load {
+            position: absolute;
+            top: 33px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: rgb(0, 0, 0);
+            animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        }
+
+        .lds-ellipsis div:nth-child(1) {
+            left: 8px;
+            animation: lds-ellipsis1 0.6s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(2) {
+            left: 8px;
+            animation: lds-ellipsis2 0.6s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(3) {
+            left: 32px;
+            animation: lds-ellipsis2 0.6s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(4) {
+            left: 56px;
+            animation: lds-ellipsis3 0.6s infinite;
+        }
+
+        @keyframes lds-ellipsis1 {
+            0% {
+                transform: scale(0);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes lds-ellipsis3 {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(0);
+            }
+        }
+
+        @keyframes lds-ellipsis2 {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(24px, 0);
+            }
+        }
+    </style>
+</head>
+
+<body onload="loadXMLDoc()">
+    <center>
+        <div class="loadContainer">
+            <div class="loadContainerHeader">
+                <h1 id="status1">Loading</h1>
+            </div>
+            <div class="lds-ellipsis">
+                <div class="load"></div>
+                <div class="load"></div>
+                <div class="load"></div>
+                <div class="load"></div>
+            </div>
+            <p id="fileName"></p>
+        </div>
+    </center>
+</body>
+
+</html>
