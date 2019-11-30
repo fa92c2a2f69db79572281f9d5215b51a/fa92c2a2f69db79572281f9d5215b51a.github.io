@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="theme-color" content="#1D091D" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Py</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        };
+    </script>
+    <style>
+        body {
+            margin: 0px;
+            background-color: rgb(29, 9, 29);
+        }
+
+        o {
+            border-style: solid;
+            border-width: 0px;
+            border-top-width: 2px;
+        }
+
+        div.canvas {
+            display: block;
+            background-color: rgb(44, 17, 44);
+            color: #ffffff;
+            font-family: 'Source Serif Pro', serif;
+            font-size: 1.8rem;
+            padding: 8px;
+            border-radius: 8px;
+            position: relative;
+            top: 0px;
+            margin: 4px;
+            margin-top: 8px;
+        }
+
+        div.canvasContainer {
+            display: block;
+            background: rgb(71, 27, 71);
+            color: #ffffff;
+            border-radius: 12px;
+            margin: 28px;
+            margin-bottom: 36px;
+            margin-top: 28px;
+            position: relative;
+            padding-bottom: .1px;
+            box-shadow: 0 4px 0 0 rgb(44, 17, 44);
+        }
+
+        m {
+            display: block;
+            color: rgb(255, 255, 255);
+            position: relative;
+            z-index: 100;
+            margin: 0px;
+            position: relative;
+            font-family: 'Source Serif Pro', serif;
+            font-size: 18px;
+            top: 4px;
+            left: 8px;
+        }
+
+        img#errDetector {
+            display: none;
+        }
+
+        p {
+            color: #ffffff;
+            font-size: 1.35rem;
+            margin: 28px;
+            font-family: 'Source Serif Pro', serif;
+        }
+
+        highlight {
+            display: inline;
+            background-color: rgb(71, 27, 71);
+            padding: 0px 4px;
+            border-radius: 8px;
+            box-shadow: 0 4px 0 0 rgb(44, 17, 44);
+        }
+
+        *::selection {
+            background-color: #ff9900;
+        }
+
+        pd-header {
+            color: #ffffff;
+            font-size: 5rem;
+            font-weight: 100;
+            text-decoration: underline;
+            border-radius: 8px;
+            text-decoration-color: rgba(255, 255, 255, .2);
+        }
+
+        img[src="root.svg"] {
+            width: 2.2rem;
+            display: inline;
+            position: relative;
+            margin: 0px;
+            top: .45rem;
+            left: .4rem;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        ul {
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            list-style: none;
+            font-size: 1.35rem;
+            position: relative;
+            left: 128px;
+            bottom: 12px;
+        }
+
+        li {
+            padding: 12px;
+            margin: 0px;
+            display: inline-block;
+            margin-right: 16px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            transition: all .3s;
+        }
+
+        li:hover {
+            text-decoration: underline;
+        }
+
+        .navBar {
+            position: fixed;
+            box-shadow: 0 0 16px rgba(0, 0, 0, 1);
+            z-index: 1000;
+            backdrop-filter: blur(12px) brightness(2) contrast(1.5);
+            background-color: rgba(44, 17, 44, 1);
+            top: 0px;
+            width: 100%;
+            user-select: none;
+            opacity: .7;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 1);
+            height: 72px;
+        }
+
+        d3d[render="margin_96px"] {
+            display: block;
+            width: 100%;
+            height: 96px;
+        }
+
+        cv.logo {
+            font-family: 'Pacifico', cursive;
+            display: inline-block;
+            font-size: 2rem;
+            margin-right: 48px;
+            position: absolute;
+            color: #ffffff;
+            top: 6px;
+            left: 16px;
+        }
+
+        li.hamburgerBtn {
+            font-size: 3rem;
+            position: absolute;
+            right: -16px;
+            top: -10px;
+            display: none;
+            color: #ffffff;
+        }
+
+        li.hamburgerBtn:hover {
+            text-decoration: none;
+        }
+
+        @media only screen and (max-width: 720px) {
+            li {
+                display: none;
+            }
+
+            li.hamburgerBtn {
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+
+<body onload="">
+    <div class="navBar">
+        <cv class="logo">UpMaths</cv>
+        <ul>
+            <li>Home</li>
+            <li>Learn</li>
+            <li>Study</li>
+        </ul>
+        <li class="hamburgerBtn">≡</li>
+    </div>
+    <div class="mainContent">
+        <d3d render="margin_96px"></d3d>
+        <p>Pythagoras can be used in a variety of different ways, in both <highlight>finding distances between objects
+            </highlight> and
+            <highlight>unknown measurements</highlight>
+        </p>
+        <div class="canvasContainer" onclick="">
+            <m>Pythagoras theorum - Find hypotenuse</m>
+            <div class="canvas" id="canvas canvas_a860977637e980e2ac319bcea71cc894" orgin="pyth" onmouseover="">
+                <var>hypotenuse = <img src="root.svg" alt="">
+                    <o>(side 1)² + (side 2)²</o>
+                </var></div>
+        </div>
+    </div>
+    <div class="canvasContainer" onclick="">
+        <m>Pythagoras theorum - Find side 1 or side 2</m>
+        <div class="canvas" id="canvas canvas_a860977637e980e2ac319bcea71cc895" orgin="pyth_rev" onmouseover="">
+            <var>unknown side = <img src="root.svg" alt="">
+                <o>(hypotenuse)² - (given side)²</o>
+            </var></div>
+    </div>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <highlight>Nemo officia consequuntur quis ad laudantium
+        </highlight>, eos autem sequi aliquam consectetur suscipit obcaecati sit fugit quidem saepe ipsum assumenda,
+        asperiores impedit animi!</p>
+    <d3d render="margin_96px"></d3d>
+    <d3d render="margin_96px"></d3d>
+    <d3d render="margin_96px"></d3d>
+    <d3d render="margin_96px"></d3d>
+    <d3d render="margin_96px"></d3d>
+    <d3d render="margin_96px"></d3d>
+    <d3d render="margin_96px"></d3d>
+    <d3d render="margin_96px"></d3d>
+    <d3d render="margin_96px"></d3d>
+    </div>
+</body>
+
+</html>
