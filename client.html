@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        div.msgs {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background-color: #fff;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+
+        div.msgs>r,
+        l {
+            display: block;
+            width: 60vw;
+            padding: 16px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+            margin: 32px;
+            max-width: 600px;
+        }
+
+        div.msgs>r {
+            border-radius: 24px 24px 24px 4px;
+            background: rgb(235, 235, 235);
+            background-attachment: fixed;
+            color: black;
+        }
+
+        div.msgs>l {
+            border-radius: 24px 24px 4px 24px;
+            background: rgb(0, 228, 255);
+            background: linear-gradient(0deg, rgba(0, 228, 255, 1) 0%, rgba(0, 129, 255, 1) 100%);
+            margin-left: auto;
+        }
+
+        div.top {
+            width: 100vw;
+            height: 72px;
+        }
+
+        div.navBar {
+            position: fixed;
+            top: 0px;
+            width: 100vw;
+            height: 72px;
+            background-color: rgba(255, 255, 255, .7);
+            backdrop-filter: blur(36px);
+            -webkit-backdrop-filter: blur(36px);
+        }
+
+        div.tshadow {
+            position: fixed;
+            top: 72px;
+            display: block;
+            width: 100vw;
+            height: 8px;
+            background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, 0));
+            z-index: 100;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tshadow"></div>
+    <div class="msgs">
+        <div class="navBar"></div>
+        <div class="top"></div>
+        <r>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus perferendis consequuntur consequatur
+            exercitationem eaque optio modi, delectus distinctio rerum. Distinctio eligendi aliquam cum excepturi hic
+            suscipit nihil ut dolorum obcaecati.</r>
+        <l>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia fugit sunt expedita obcaecati quidem.
+            Placeat labore, possimus, repellendus velit dolorum eaque eum voluptas neque, dicta recusandae dignissimos
+            accusamus distinctio sequi.</l>
+        <r>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus perferendis consequuntur consequatur
+            exercitationem eaque optio modi, delectus distinctio rerum. Distinctio eligendi aliquam cum excepturi hic
+            suscipit nihil ut dolorum obcaecati.</r>
+        <l>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia fugit sunt expedita obcaecati quidem.
+            Placeat labore, possimus, repellendus velit dolorum eaque eum voluptas neque, dicta recusandae dignissimos
+            accusamus distinctio sequi.</l>
+        <r>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus perferendis consequuntur consequatur
+            exercitationem eaque optio modi, delectus distinctio rerum. Distinctio eligendi aliquam cum excepturi hic
+            suscipit nihil ut dolorum obcaecati.</r>
+        <l>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia fugit sunt expedita obcaecati quidem.
+            Placeat labore, possimus, repellendus velit dolorum eaque eum voluptas neque, dicta recusandae dignissimos
+            accusamus distinctio sequi.</l>
+        <r>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus perferendis consequuntur consequatur
+            exercitationem eaque optio modi, delectus distinctio rerum. Distinctio eligendi aliquam cum excepturi hic
+            suscipit nihil ut dolorum obcaecati.</r>
+        <l>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia fugit sunt expedita obcaecati quidem.
+            Placeat labore, possimus, repellendus velit dolorum eaque eum voluptas neque, dicta recusandae dignissimos
+            accusamus distinctio sequi.</l>
+        <r>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus perferendis consequuntur consequatur
+            exercitationem eaque optio modi, delectus distinctio rerum. Distinctio eligendi aliquam cum excepturi hic
+            suscipit nihil ut dolorum obcaecati.</r>
+        <l>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia fugit sunt expedita obcaecati quidem.
+            Placeat labore, possimus, repellendus velit dolorum eaque eum voluptas neque, dicta recusandae dignissimos
+            accusamus distinctio sequi.</l>
+        <r>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus perferendis consequuntur consequatur
+            exercitationem eaque optio modi, delectus distinctio rerum. Distinctio eligendi aliquam cum excepturi hic
+            suscipit nihil ut dolorum obcaecati.</r>
+        <l>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia fugit sunt expedita obcaecati quidem.
+            Placeat labore, possimus, repellendus velit dolorum eaque eum voluptas neque, dicta recusandae dignissimos
+            accusamus distinctio sequi.</l>
+        <r>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus perferendis consequuntur consequatur
+            exercitationem eaque optio modi, delectus distinctio rerum. Distinctio eligendi aliquam cum excepturi hic
+            suscipit nihil ut dolorum obcaecati.</r>
+        <l>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia fugit sunt expedita obcaecati quidem.
+            Placeat labore, possimus, repellendus velit dolorum eaque eum voluptas neque, dicta recusandae dignissimos
+            accusamus distinctio sequi.</l>
+        <r>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus perferendis consequuntur consequatur
+            exercitationem eaque optio modi, delectus distinctio rerum. Distinctio eligendi aliquam cum excepturi hic
+            suscipit nihil ut dolorum obcaecati.</r>
+        <l>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia fugit sunt expedita obcaecati quidem.
+            Placeat labore, possimus, repellendus velit dolorum eaque eum voluptas neque, dicta recusandae dignissimos
+            accusamus distinctio sequi.</l>
+        <r>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus perferendis consequuntur consequatur
+            exercitationem eaque optio modi, delectus distinctio rerum. Distinctio eligendi aliquam cum excepturi hic
+            suscipit nihil ut dolorum obcaecati.</r>
+        <l>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia fugit sunt expedita obcaecati quidem.
+            Placeat labore, possimus, repellendus velit dolorum eaque eum voluptas neque, dicta recusandae dignissimos
+            accusamus distinctio sequi.</l>
+    </div>
+</body>
+
+</html>
